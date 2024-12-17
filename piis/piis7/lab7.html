@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мини графический редактор</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .toolbar {
+            margin-bottom: 10px;
+        }
+
+        svg {
+            border: 1px solid #000;
+            cursor: crosshair;
+        }
+
+        #drawing_area {
+            border-width: 3px;
+            border-color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="toolbar">
+        <label for="shape-select">Выберите фигуру:</label>
+        <select id="shape-select">
+            <option value="circle">Круг</option>
+            <option value="rectangle">Квадрат</option>
+
+        </select>
+    </div>
+    <div id="drawing_area">
+        <svg id="drawing-area" width="1500" height="800"></svg>
+    </div>
+
+    <script src="lab7S.js"></script>
+</body>
+</html>
