@@ -1,0 +1,79 @@
+body {
+    background-color: #e6e6fa;
+    margin: 10px;
+    padding: 20px;
+}
+
+    
+    body > * {
+        max-width: 1440px;
+        margin: 0 auto;
+        background-color: white;
+        padding: 20px;
+    }
+
+.images-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+    .images-container img {
+        height: 300px;
+        width: 200px;
+        object-fit: cover;
+        border-radius: 15px;
+    }
+
+
+.bold-css {
+    font-weight: bold;
+}
+
+strong {
+    font-weight: bold;
+}
+
+b {
+    font-weight: 700;
+}
+
+.desc-1 {
+    text-align: center;
+    font-family: 'Adventure Indiana', sans-serif;
+}
+
+.desc-2 {
+    text-align: justify;
+    font-family: 'Menlo', sans-serif;
+}
+
+.desc-3 {
+    text-align: right;
+    font-family: 'Molli Writes', sans-serif;
+}
+
+ul {
+    list-style-type: none;
+}
+
+    ul li a {
+        text-decoration: none;
+        color: black;
+    }
+
+@font-face {
+    font-family: 'Adventure Indiana';
+    src: url('font/ofont.ru_Adventure Indiana.ttf');
+}
+
+@font-face {
+    font-family: 'Menlo';
+    src: url('font/ofont.ru_Menlo.ttf');
+}
+
+@font-face {
+    font-family: 'Molli Writes';
+    src: url('font/ofont.ru_Molli Writes.ttf');
+}
