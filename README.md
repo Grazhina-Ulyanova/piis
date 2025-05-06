@@ -68,4 +68,6 @@
         userService.saveChanges(anotherUser);
     }
 ```
+---
+## Котик
 ![Image](https://github.com/user-attachments/assets/92822d46-a818-49c3-996c-02d42e206ab6)
