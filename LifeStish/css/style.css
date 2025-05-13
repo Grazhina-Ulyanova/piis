@@ -1,0 +1,547 @@
+:root {
+  /* Light Theme */
+  --lt-primary: #2c3e50;
+  --lt-secondary: #3498db;
+  --lt-bg: #f8f9fa;
+  --lt-text: #2d3436;
+  --lt-post-bg: #ffffff;
+  --lt-border: #e0e0e0;
+  --lt-hover: #f1f1f1;
+  
+  /* Dark Theme */
+  --dt-primary: #1a1a1a;
+  --dt-secondary: #ff6b6b;
+  --dt-bg: #2d2d2d;
+  --dt-text: #e8e6e3;
+  --dt-post-bg: #363636;
+  --dt-border: #4a4a4a;
+  --dt-hover: #404040;
+  
+  /* Общие переменные */
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --radius: 12px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Светлая тема по умолчанию */
+body {
+  --primary: var(--lt-primary);
+  --secondary: var(--lt-secondary);
+  --bg: var(--lt-bg);
+  --text: var(--lt-text);
+  --post-bg: var(--lt-post-bg);
+  --border: var(--lt-border);
+  --hover: var(--lt-hover);
+}
+
+/* Тёмная тема */
+body.dark-theme {
+  --primary: var(--dt-primary);
+  --secondary: var(--dt-secondary);
+  --bg: var(--dt-bg);
+  --text: var(--dt-text);
+  --post-bg: var(--dt-post-bg);
+  --border: var(--dt-border);
+  --hover: var(--dt-hover);
+}
+
+/* Общие стили */
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  transition: var(--transition);
+}
+
+.header {
+  background: linear-gradient(135deg, var(--primary) 0%, color-mix(in srgb, var(--primary), black 15%) 100%);
+  box-shadow: var(--shadow);
+  padding: 1rem 0;
+  position: sticky;
+  margin-bottom: 2rem;
+  top: 0;
+  z-index: 10; /* достаточно, чтобы быть выше контента */
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Логотип слева */
+.logo-img {
+  width: 210px;
+  height: 60px;
+  background-image: url('../assets/images/logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+body.dark-theme .logo-img {
+  background-image: url('../assets/images/logo-dark.png');
+}
+
+body.dark-theme .section-title {
+  color: #e7e2e2;
+}
+
+body.dark-theme  #display-blog-nickname{
+  color: #e4dede;
+}
+
+body.dark-theme  #display-blog-topic{
+  color: #e4dede;
+}
+
+body.dark-theme  #display-blog-title{
+  color: #e4dede;
+}
+
+body.dark-theme  #label-author{
+  color: #e4dede;
+}
+
+
+
+.welcome-section {
+  padding: 2rem 1rem;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--text);
+  background-color: var(--post-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+}
+
+.about-section {
+  padding: 2rem 1rem;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--text);
+  background-color: var(--post-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+}
+
+
+
+/* Навигация */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem; /* расстояние между элементами навигации */
+  text-decoration: none !important;
+}
+
+/* Список навигации - горизонтально */
+.nav-list {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 1.5rem; /* расстояние между пунктами меню */
+}
+
+/* Ссылки навигации */
+.nav-link {
+  color: #ffffff; /* белый цвет для контраста */
+  font-weight: 700; /* жирный шрифт */
+  text-decoration: none;
+  font-size: 1rem;
+  text-transform: uppercase; /* заглавные буквы для стиля */
+  transition: color 0.3s ease;
+}
+
+
+nav a {
+  text-decoration: none !important;        /* убирает подчёркивание у всех ссылок */
+  border-bottom: none;          /* на всякий случай — если подчёркивание делается бордером */
+  color: #fff;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--secondary); /* цвет при наведении */
+  text-decoration: underline;
+}
+
+/* Кнопка переключения темы и бургер-меню остаются на месте */
+.theme-toggle {
+  margin-right: 0.5rem;
+}
+
+/* Бургер-меню (для мобильных) */
+.burger-menu {
+  display: none; /* по умолчанию скрываем, включайте через media queries */
+}
+
+
+.logo img {
+  width: 210px;         /* Задайте нужную ширину */
+  height: auto;         /* Автоматически подбирает высоту для сохранения пропорций */
+  display: block;
+  /*max-width: 100%;      /* Адаптивность - не выходит за пределы контейнера */
+  object-fit: contain;  /* Сохраняет качество и пропорции, не обрезая картинку */
+}
+
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.9);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.create-blog-section {
+  padding: 2rem 1rem;
+  background: var(--post-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+}
+
+.blog-setup-form label {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.blog-setup-form input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.blog-header {
+  margin-bottom: 2rem;
+  background: var(--post-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1rem 1.5rem;
+}
+
+.blog-header h1 {
+  margin: 0 0 0.3em 0;
+  font-size: 2rem;
+}
+
+.blog-header p {
+  margin: 0.2rem 0;
+  font-style: italic;
+  color: #555;
+}
+
+
+/* Посты */
+/* Красивый современный шрифт для постов */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+.post-form {
+  margin-bottom: 2rem; /* Отступ между формой и списком постов */
+}
+
+.post {
+  background-color: var(--post-bg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  padding: 1.5rem 1.7rem 1.2rem 1.7rem;
+  border-radius: var(--radius);
+  transition: var(--transition);
+  margin-bottom: 2.1rem; /* Отступ между постами */
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  font-size: 1.09rem;
+  letter-spacing: 0.01em;
+
+}
+
+
+
+.post-content {
+  margin-bottom: 1rem;
+  color: var(--text);
+  font-size: 1.13rem;
+  font-family: inherit;
+  line-height: 1.6;
+  word-break: break-word;
+}
+
+#post-content {
+  width: 1100px;
+  /*margin: 2rem auto;*/
+  padding: 1.5rem 2rem;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  color: #333; /* тёмно-серый — хорошо читается */
+  font-size: 1.2rem;
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+  line-height: 1.8;
+  word-break: break-word;
+  text-align: justify;
+
+  display: block;
+  margin-left: auto;
+  margin-top: 10px;
+  margin-right: 20px;
+}
+
+.post-author {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--secondary, #3498db);
+  margin-bottom: 0.4em;
+}
+
+
+
+.post-meta {
+  display: flex;
+  justify-content: space-between;  /* лайки слева, дата справа */
+  align-items: center;
+  gap: 2rem;
+}
+
+.likes {
+  display: flex;
+  align-items: center;
+  font-size: 1.12rem;
+  color: #e25555;
+  font-weight: 600;
+  background: rgba(255, 99, 132, 0.07);
+  padding: 0.22em 1em 0.22em 0.7em;
+  border-radius: 2em;
+  box-shadow: 0 2px 8px rgba(226,85,85,0.05);
+  letter-spacing: 0.05em;
+  min-width: 56px;
+  gap: 0.5em;
+}
+
+.likes::before {
+  margin-right: 0.4em;
+  font-size: 1.1em;
+}
+
+.post-meta time {
+  color: #888;
+  font-size: 1.01rem;
+  font-family: inherit;
+  letter-spacing: 0.04em;
+  background: rgba(0,0,0,0.03);
+  padding: 0.18em 0.9em;
+  border-radius: 1em;
+}
+
+
+/* Кнопки */
+.btn {
+  background: linear-gradient(45deg, var(--secondary), color-mix(in srgb, var(--secondary), white 20%));
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+#publish-btn{
+  display: block;
+  margin-left: auto;
+  margin-top: 10px;
+  margin-right: 20px;
+
+  background: linear-gradient(45deg, var(--secondary), color-mix(in srgb, var(--secondary), white 20%));
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--secondary), transparent 40%);
+}
+
+/* Карусель */
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 400px; /* или нужная высота */
+  overflow: hidden;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.carousel-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  pointer-events: none; /* чтобы не мешать кликам */
+  border-radius: var(--radius);
+  z-index: 0;
+}
+
+.carousel-item.active {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 1;
+}
+
+
+/* Футер */
+.footer {
+  background: linear-gradient(135deg, var(--primary) 0%, color-mix(in srgb, var(--primary), black 15%) 100%);
+  /* border-top: 1px solid var(--border); */
+  color: #fff;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  letter-spacing: 0.03em;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.contacts {
+  display: flex;
+  gap: 2rem;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1.08rem;
+  font-family: inherit;
+  text-decoration: none;            /* убираем подчёркивание */
+  font-weight: 500;
+  background: rgba(255,255,255,0.03);
+  transition: background 0.25s, color 0.25s, transform 0.25s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.contact-link:hover,
+.contact-link:focus {
+  background: rgba(255,255,255,0.18);
+  color: #ffe082;
+  transform: translateY(-2px) scale(1.04);
+  text-decoration: none;
+}
+
+.copyright {
+  color: #fff;
+  opacity: 0.75;
+  font-size: 0.98rem;
+  margin: 0;
+  font-family: inherit;
+  letter-spacing: 0.04em;
+}
+
+
+/* Переключатель темы */
+.theme-toggle {
+  background: var(--post-bg);
+  border: 2px solid var(--border);
+  padding: 0.5rem;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  transition: var(--transition);
+}
+
+.theme-toggle:hover {
+  transform: rotate(180deg) scale(1.1);
+  background-color: var(--hover);
+}
+
+/* Адаптивность */
+/* @media (max-width: 768px) {
+  
+} */
+
+/* Адаптив для мобильных, если нужно */
+@media (max-width: 768px) {
+  .nav-list {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .burger-menu {
+    display: block;
+    cursor: pointer;
+  }
+
+  .nav-list {
+    background-color: var(--post-bg);
+    box-shadow: var(--shadow);
+    border-radius: var(--radius);
+    padding: 1rem;
+    position: absolute;
+    top: 100%;
+    right: 20px;
+    width: 200px;
+  }
+
+  .nav-link {
+    color: var(--text);
+  }
+
+  .footer {
+    background: linear-gradient(135deg, var(--primary) 0%, color-mix(in srgb, var(--primary), black 15%) 100%);
+    padding-bottom: 2rem;
+    padding-top: 10rem;
+    padding-left: 2rem;
+  }
+}
+
+/* Адаптив для мобильных, если нужно */
+@media (max-width: 1440px) {
+  .footer {
+    padding-bottom: 2rem;
+    padding-top: 10rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+  }
+}
+
+.section-title {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: #2c3e50;
+  text-align: center;
+}
+
